@@ -23,7 +23,7 @@ exports.signin = (req, res) => {
   User.findOne({ email }, (err, foundUser) => {
     if (err || !foundUser) {
       return res.status(400).json({
-        SyntaxError: 'User with that email does not exit. Please sign up!',
+        error: 'User with that email does not exit. Please sign up!',
       });
     }
     /**
