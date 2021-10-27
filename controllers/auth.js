@@ -7,7 +7,7 @@ exports.signup = (req, res) => {
   const user = new User(req.body);
   user.save((err, user) => {
     if (err) {
-      return res.status(400).json({ err: errorHandler });
+      return res.status(400).json({ error: 'Oops! Email is already taken!' });
     }
     user.hashed_password = undefined;
     user.salt = undefined;
